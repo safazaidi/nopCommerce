@@ -1,0 +1,12 @@
+com\nopcommerce\e2eTests\RunTest.class
+com\nopcommerce\e2eTests\utils\BasePage.class
+com\nopcommerce\e2eTests\page_objects\CatalogProductPageObjects.class
+com\nopcommerce\e2eTests\step_definitions\LoginNopStepDefinitions.class
+com\nopcommerce\e2eTests\utils\Setup.class
+com\nopcommerce\e2eTests\utils\TearDown.class
+com\nopcommerce\e2eTests\utils\ConfigFileReader.class
+com\nopcommerce\e2eTests\page_objects\LoginNopPageObjects.class
+com\nopcommerce\e2eTests\utils\SeleniumUtils.class
+com\nopcommerce\e2eTests\utils\Wait.class
+com\nopcommerce\e2eTests\step_definitions\CatalogProductStepDefinitions.class
+com\nopcommerce\e2eTests\utils\Validations.class

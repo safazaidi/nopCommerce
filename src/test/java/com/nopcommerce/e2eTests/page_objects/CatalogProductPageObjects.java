@@ -48,15 +48,62 @@ public class CatalogProductPageObjects extends BasePage {
 	@FindBy(how = How.XPATH, using = "//h1[@class='float-left']" )
 	private static WebElement mssg  ;
 	
+	//Add New Product
+	
+	@FindBy(how = How.XPATH, using = "//a[@class='btn btn-primary']" )
+	private static WebElement btnAddNew  ;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='Name']" )
+	private static WebElement  productName ;
+	
+	@FindBy(how = How.XPATH, using = "//div[@id='product-info']//div[@class='card-header with-border clearfix']" )
+	private static WebElement btnInfo  ;
+	
+	@FindBy(how = How.XPATH, using = "//textarea[@id='ShortDescription']" )
+	private static WebElement  shortdescription ;
+	
+	@FindBy(how = How.XPATH, using = "//textarea[@id='ShortDescription']" )
+	private static WebElement  fulldescription ;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='Sku']" )
+	private static WebElement  sku ;
+	
+	@FindBy(how = How.XPATH, using = "//span[@aria-expanded='true']//input[@role='searchbox']" )
+	private static WebElement categories ;
+	
+	@FindBy(how = How.XPATH, using = "//span[@class='select2 select2-container select2-container--default select2-container--below select2-container--focus']//input[@role='searchbox']" )
+	private static WebElement  manufecter ;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='Published']" )
+	private static WebElement btnPublished ;
+	
+	@FindBy(how = How.XPATH, using = "//span[@aria-expanded='true']//input[@role='searchbox']" )
+	private static WebElement tags ;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='Gtin']" )
+	private static WebElement gtin ;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ManufacturerPartNumber']" )
+	private static WebElement partNumber ;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='ShowOnHomepage']" )
+	private static WebElement btnShow ;
+	
+	@FindBy(how = How.XPATH, using = "//select[@id='ProductTypeId']" )
+	private static WebElement typeProduct ;
+
+	
 	public CatalogProductPageObjects( ) {
 		super(Setup.getDriver());
 		
 	}
 	
-	public static WebElement getBtncatalog() {
+	public static WebElement getBtncatalog() throws InterruptedException {
+		Thread.sleep(3000);
 		return btncatalog ;
 	}
-	public static WebElement getBtnproduct() {
+	public static WebElement getBtnproduct() throws InterruptedException {
+		Thread.sleep(5000);
 		return btnproduct ;
 	}
 	public static WebElement getNameProduct() {
@@ -99,5 +146,66 @@ public class CatalogProductPageObjects extends BasePage {
 	public static WebElement getMssg() {
 		return mssg ;
 	}
+	
+	//Add New Product
+	
+	public static WebElement getBtnAddNew() {
+		return btnAddNew ;
+	}
+	
+	public static WebElement getProductName() {
+		return productName ;
+	}
+	
+	public static WebElement getShortdescription() {
+		return shortdescription;
+	}
+	
+	public static WebElement getFulldescription() {
+		return fulldescription ;
+	}
+	
+	public static WebElement getSku() {
+		return sku ;
+	}
+	
+	public static WebElement getCategories() {
+		return categories ;
+	}
+	
+	public static WebElement getManufecter() {
+		return manufecter ;
+	}
+	
+	public static WebElement getBtnPublished() {
+		return btnPublished ;
+	}
+	
+	public static WebElement getTags() {
+		return tags ;
+	}
+	
+	public static WebElement getGtin() {
+		return gtin ;
+	}
+	
+	public static WebElement getPartNumber() {
+		return partNumber ;
+	}
+	
+	public static WebElement getBtnShow() {
+		return btnShow ;
+	}
+	
+	public static WebElement getTypeProduct() {
+		return typeProduct ;
+	}
+	
+	public static WebElement getBtnInfo() {
+		return btnInfo ;
+	}
+
+
+
 
 }

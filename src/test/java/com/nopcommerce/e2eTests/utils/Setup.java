@@ -68,6 +68,11 @@ public class Setup {
 			chromeOptions.addArguments("--disable-logging");
 			chromeOptions.addArguments("--log-level=3");
 			chromeOptions.addArguments("--remote-debugging-pipe");
+			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+                    "AppleWebKit/537.36 (KHTML, like Gecko) " +
+                    "Chrome/123.0.0.0 Safari/537.36");
+			chromeOptions.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+			chromeOptions.setExperimentalOption("useAutomationExtension", false);
 
 			driver = new ChromeDriver(chromeOptions);
 			break;

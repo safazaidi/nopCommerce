@@ -1,0 +1,12 @@
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\page_objects\CatalogProductPageObjects.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\page_objects\LoginNopPageObjects.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\RunTest.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\step_definitions\CatalogProductStepDefinitions.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\step_definitions\LoginNopStepDefinitions.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\BasePage.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\ConfigFileReader.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\SeleniumUtils.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\Setup.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\TearDown.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\Validations.java
+C:\Users\DELL\eclipse-workspace\nopcommerce\src\test\java\com\nopcommerce\e2eTests\utils\Wait.java

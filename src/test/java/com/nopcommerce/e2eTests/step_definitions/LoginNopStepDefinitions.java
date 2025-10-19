@@ -44,8 +44,11 @@ public class LoginNopStepDefinitions {
 	    
 	}
 	@Then("Je me redirige vers la page Home {string}")
-	public void jeMeRedirigeVersLaPageHome(String string) {
-		validations.assertEquals(LoginNopPageObjects.getDashboard(), "Dashboard");
+	public void jeMeRedirigeVersLaPageHome(String string) throws InterruptedException {
+		seleniumUtils.switchToParentFrame();
+		seleniumUtils.click(LoginNopPageObjects.getBtnCheck());
+		
+		validations.assertEquals(LoginNopPageObjects.getDashboard(), "Welcome to your store!");
 	    
 	}
 

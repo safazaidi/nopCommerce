@@ -14,6 +14,8 @@ public class LoginNopPageObjects extends BasePage{
 
 	@FindBy(how = How.XPATH, using = "//input[@id='Email']" )
 	private static WebElement email;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"uMtSJ0\"]/div/label/input" )
+	private static WebElement btnCheck;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='Password']" )
 	private static WebElement password;
@@ -21,7 +23,7 @@ public class LoginNopPageObjects extends BasePage{
 	@FindBy(how = How.XPATH, using = "//button[@type='submit']" )
 	private static WebElement btnLogin;
 	
-	@FindBy(how = How.XPATH, using = "//h1[normalize-space()='Dashboard']" )
+	@FindBy(how = How.XPATH, using = "//h4[normalize-space()='Welcome to your store!']" )
 	private static WebElement dashBoard;
 	
 	public LoginNopPageObjects() {
@@ -44,7 +46,17 @@ public class LoginNopPageObjects extends BasePage{
 	}
 	
 	public static WebElement getDashboard() {
+		
 		return dashBoard;
-
-}
+ 
+    }
+	
+public static WebElement getBtnCheck() throws InterruptedException {
+	Thread.sleep(5000);
+		
+		return btnCheck;
+ 
+    }
+	
+	
 }

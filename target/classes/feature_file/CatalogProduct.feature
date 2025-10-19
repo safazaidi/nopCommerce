@@ -22,5 +22,28 @@ Background:
   And Je saisie HP_SPX_UB dans Go directly to product SKU
   And Je clique sur le bouton go
   Then Je redirige vers nouvelle page "Edit product details - HP Spectre XT Pro UltraBook  back to product list" 
+  
+  @AddNewProduct
+  Scenario: Je souhaite ajouter un nouveau produit
+  And Je clique sur le bouton catalog
+  And Je clique sur le bouton product dans le menu catalog
+  And Je clique sur le bouton add new product
+  And Je redirige vers une nouvelle page
+  And Je clique sur le bouton product info
+  And Je saisie le product name
+  And Je saisie une short description
+  And Je saisie full description
+  And Je saisie le SKU
+  And Je selectionne Electronics dans le menu Categories
+  And Je selectionne HP dans le menu Manufactures
+  And Je clique sur le bouton Published
+  And Je saisie Product tags
+  And Je saisie le GTIN
+  And Je saisie manufacturer part number
+  And Je clique sur le bouton show on home page
+  And Je selectionne simple dans le menu product template
+   
+  
+
 
   
