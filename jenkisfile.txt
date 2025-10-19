@@ -1,0 +1,81 @@
+pipeline {
+    agent any
+
+    environment {
+        DOTNET_VERSION = "8.0"
+        PROJECT_PATH = "src/Presentation/Nop.Web"
+        TESTS_PATH = "nopcommerce\src\test\java"          // dossier où se trouvent tes tests Java
+        DEPLOY_PATH = "C:\Users\DELL\eclipse-workspace\nopcommerce"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo "Cloning NopCommerce repository..."
+                git branch: 'main', url: 'https://github.com/safazaidi/nopCommerce.git'
+            }
+        }
+
+        stage('Build .NET Project') {
+            steps {
+                echo "Restoring and building NopCommerce..."
+                sh 'dotnet restore NopCommerce.sln'
+                sh 'dotnet build NopCommerce.sln --configuration Release'
+            }
+        }
+
+        stage('Run .NET Unit Tests') {
+            steps {
+                echo "Running .NET unit tests..."
+                sh 'dotnet test NopCommerce.sln --configuration Release --no-build'
+            }
+        }
+
+        stage('Build Java Tests') {
+            steps {
+                echo "Compiling Selenium + Unit Test project (Java)..."
+                dir("${TESTS_PATH}") {
+                    // Compilation du projet Java (depuis Eclipse ou Maven)
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Run Selenium Tests') {
+            steps {
+                echo "Running automated Selenium tests..."
+                dir("${TESTS_PATH}") {
+                    // Lancer les tests automatisés
+                    sh 'mvn test'
+                }
+            }
+        }
+
+        stage('Publish Website') {
+            steps {
+                echo "Publishing NopCommerce website..."
+                sh "dotnet publish ${PROJECT_PATH} -c Release -o publish"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying to IIS..."
+                bat 'iisreset /stop'
+                bat "xcopy publish ${DEPLOY_PATH} /E /H /Y"
+                bat 'iisreset /start'
+                echo "Deployment complete "
+            }
+        }
+    }
+
+    post {
+        success {
+            echo " Build, test, and deployment successful!"
+        }
+        failure {
+            echo " Pipeline failed. Check logs for errors."
+        }
+    }
+}
